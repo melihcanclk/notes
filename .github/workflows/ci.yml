@@ -1,0 +1,29 @@
+name: Clone README.md
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Add config and commit
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+
+        if [ -f docs/README.md ]; then
+          rm docs/README.md
+          git add .
+          git commit -m "Delete the README.md in docs/ dir"
+        fi
+        
+        cp README.md docs/README.md
+        git add .
+        git commit -m "Clone the main README.md into docs/ dir"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
