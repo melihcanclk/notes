@@ -1,8 +1,8 @@
 # Hoş geldiniz
 
-> Kendi notlarımı ve öğrendiklerimi paylaştığım bir blog tarzi bir şey.
+> Kendi notlarımı ve öğrendiklerimi paylaştığım yer.
 
-Kitabın adresi: https://github.com/melihcanclk/notes 
+Kitabın adresi: https://github.com/melihcanclk/notes
 
 ## İçindekiler
 
